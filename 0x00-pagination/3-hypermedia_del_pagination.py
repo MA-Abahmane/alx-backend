@@ -66,20 +66,14 @@ class Server:
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
         """  """
-        assert index is None or (0 <= index < len(self.indexed_dataset())), "Index out of range"
-        assert isinstance(page_size, int) and page_size > 0, "Page size must be an integer greater than 0"
+        assert isinstance(index, int) and index > 0
+        assert isinstance(page_size, int) and page_size > 0
 
-        start_index = index if index is not None else 0
-        end_index = start_index + page_size
-
-        dataset = self.indexed_dataset()
-        data_page = [dataset[i] for i in range(start_index, end_index) if i in dataset]
-
-        next_index = end_index if end_index < len(dataset) else None
+        nextIdx = index + page_size
 
         return {
-            'index': start_index,
-            'data': data_page,
-            'page_size': len(data_page),
-            'next_index': next_index
+            'index': index,
+            'data': nextIdx,
+            'page_size': len(self.dataset()),
+            'next_index': self.dataset()[index: nextIdx]
         }

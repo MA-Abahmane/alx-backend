@@ -13,10 +13,9 @@ Implement a get_hyper method that takes the same arguments (and defaults) as
 You can use the math module if necessary.
 """
 
-from ast import Dict
 import csv
 import math
-from typing import List, Tuple
+from typing import List, Tuple, Dict
 
 
 class Server:
@@ -54,15 +53,16 @@ class Server:
 
         return data[start:end]
 
-    def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
         """ returns a dictionary containing key-value pairs """
-        dataset: List = self.dataset()
+        dataset = self.dataset()
+        data = []
         try:
             data = self.get_page(page, page_size)
         except AssertionError:
             return {}
 
-        totalPages: int = math.ceil(len(dataset) / page_size)
+        totalPages = math.ceil(len(dataset) / page_size)
 
         return {
             'page_size': page_size if data != [] else 0,

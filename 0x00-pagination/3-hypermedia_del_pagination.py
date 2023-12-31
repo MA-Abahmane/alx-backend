@@ -48,7 +48,7 @@ class Server:
 
         return {
             'index': index,
-            'data': nextIdx,
+            'data': self.dataset()[index: nextIdx],
             'page_size': len(self.dataset()),
-            'next_index': self.dataset()[index: nextIdx]
+            'next_index': nextIdx,
         }

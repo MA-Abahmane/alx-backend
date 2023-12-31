@@ -39,8 +39,8 @@ class Server:
             }
         return self.__indexed_dataset
 
-    def get_hyper_index(self, index: int = None, page_size: int = 10):
-        """  """
+    def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
+        """  return a dictionary with the key-value pairs """
         assert isinstance(index, int) and index > 0
         assert isinstance(page_size, int) and page_size > 0
 

@@ -56,10 +56,13 @@ class Server:
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
         """ returns a dictionary containing key-value pairs """
-        dataset = self.dataset()
-        data = self.get_page(page, page_size)
+        dataset: List = self.dataset()
+        try:
+            data = self.get_page(page, page_size)
+        except AssertionError:
+            return {}
 
-        totalPages = math.ceil(len(dataset) / page_size)
+        totalPages: int = math.ceil(len(dataset) / page_size)
 
         return {
             'page_size': page_size if data != [] else 0,

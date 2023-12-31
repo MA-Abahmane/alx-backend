@@ -56,11 +56,7 @@ class Server:
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
         """ returns a dictionary containing key-value pairs """
         dataset = self.dataset()
-        data = []
-        try:
-            data = self.get_page(page, page_size)
-        except AssertionError:
-            return {}
+        data = self.get_page(page, page_size)
 
         totalPages = math.ceil(len(dataset) / page_size)
 
@@ -70,7 +66,8 @@ class Server:
             'data': data,
             'next_page': (page + 1 if page < totalPages else None),
             'prev_page': (page - 1 if page > 1 else None),
-            'total_pages': totalPages}
+            'total_pages': totalPages
+            }
 
 
 def index_range(page: int, page_size: int) -> Tuple:

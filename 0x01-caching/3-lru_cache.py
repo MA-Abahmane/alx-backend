@@ -1,23 +1,25 @@
 #!/usr/bin/env python3
 
-"""
-A class LRUCache that inherits from
- BaseCaching and is a caching system:
+""" A class LRUCache that inherits from
+    BaseCaching and is a caching system:
 """
 
 from base_caching import BaseCaching
 
 
 class LRUCache(BaseCaching):
-    """ Class LRUCache """
+    """ Class LRUCache
+    """
 
     def __init__(self):
-        """ Constructor """
+        """ Constructor
+        """
         super().__init__()
         self.used = []
 
     def put(self, key, item):
-        """ save key/value in cache """
+        """ save key/value in cache
+        """
         if key is None or item is None:
             return
 
@@ -36,7 +38,8 @@ class LRUCache(BaseCaching):
         self.used.append(key)
 
     def get(self, key):
-        """ retrieve value by key from cache """
+        """ retrieve value by key from cache
+        """
         if key is None or key not in self.cache_data:
             return
 

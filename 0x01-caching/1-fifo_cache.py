@@ -8,6 +8,8 @@ from base_caching import BaseCaching
 
 
 class FIFOCache(BaseCaching):
+    """ class FIFOCache inherits from subclass BaseCaching
+    """
 
     def __init__(self):
         """ Constructor

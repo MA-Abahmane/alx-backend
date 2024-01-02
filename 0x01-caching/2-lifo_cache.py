@@ -8,7 +8,8 @@ from base_caching import BaseCaching
 
 
 class LIFOCache(BaseCaching):
-
+    """ class LIFOCache inherits from subclass BaseCaching
+    """
     def __init__(self):
         """ Constructor
         """

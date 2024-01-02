@@ -9,7 +9,7 @@ from BaseCaching import BaseCaching
 
 
 class BasicCache(BaseCaching):
-    """ class BasicCache """
+    """ class BasicCache inherits from subclass BaseCaching """
 
     def put(self, key, item):
         """ save key/value in cache """

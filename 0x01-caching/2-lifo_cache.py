@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-""" A class LIFOCache that inherits from 
+""" A class LIFOCache that inherits from
     BaseCaching and is a caching system:
 """
 

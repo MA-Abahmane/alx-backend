@@ -67,7 +67,8 @@ class LFUCache(BaseCaching):
         """
         if key is not None and new_item is not None:
             with self.rlock:
-                # Update the cache with the new item without changing the access count
+                # Update the cache with the new item
+                #  without changing the access count
                 self.cache_data.update({key: new_item})
                 # No need to check for eviction in this case
 

@@ -27,13 +27,14 @@ app = Flask(__name__)
 babel = Babel(app)
 
 app.config.from_object(Config)
-app.url_map.strict_slashes = False
+
 
 @babel.localeselector
 def get_locale() -> str:
     """ find best match with supported languages
     """
     return request.accept_languages.best_match(app.config['LANGUAGES'])
+
 
 @app.route('/')
 def index() -> str:

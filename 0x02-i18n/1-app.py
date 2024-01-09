@@ -14,7 +14,7 @@ from flask import Flask, render_template
 from flask_babel import Babel
 
 
-class Confit:
+class Config:
     """ class Confit
     """
     # Configure supported languages

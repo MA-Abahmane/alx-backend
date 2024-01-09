@@ -18,8 +18,7 @@ def index() -> str:
     """ Flask app render
     """
     # Render the '0-index.html' template with specified title and header
-    return render_template('0-index.html', title='Welcome to Holberton',
-                            header='Hello world')
+    return render_template('0-index.html')
 
 # Run the Flask app if the script is executed directly
 if __name__ == '__main__':

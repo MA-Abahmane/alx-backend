@@ -27,7 +27,7 @@ app = Flask(__name__)
 babel = Babel(app)
 
 app.config.from_object(Config)
-
+app.url_map.strict_slashes = False
 
 @babel.localeselector
 def get_locale() -> str:

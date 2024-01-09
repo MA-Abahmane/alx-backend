@@ -37,7 +37,7 @@ def get_locale() -> str:
 
 @app.route('/')
 def index() -> str:
-    """ flask app
+    """ flask app runner
     """
     return render_template('2-index.html')
 

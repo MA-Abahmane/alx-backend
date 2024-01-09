@@ -10,8 +10,8 @@ Use Config to set Babel’s default locale ("en") and timezone ("UTC")
 Use that class as config for your Flask app.
 """
 
-from flask import Flask, render_template
 from flask_babel import Babel
+from flask import Flask, render_template
 
 
 class Config:
@@ -37,7 +37,7 @@ app.config.from_object(Config)
 def index() -> str:
     """ flask app
     """
-    return render_template('1-index.html',)
+    return render_template('1-index.html')
 
 
 if __name__ == '__main__':

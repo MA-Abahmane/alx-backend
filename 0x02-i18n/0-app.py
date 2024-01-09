@@ -12,6 +12,7 @@ from flask import Flask, render_template
 # Create a Flask web application
 app = Flask(__name__)
 
+
 # Define a route for the root URL ("/")
 @app.route('/')
 def index() -> str:
@@ -19,6 +20,7 @@ def index() -> str:
     """
     # Render the '0-index.html' template with specified title and header
     return render_template('0-index.html')
+
 
 # Run the Flask app if the script is executed directly
 if __name__ == '__main__':

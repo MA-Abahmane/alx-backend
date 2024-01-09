@@ -14,22 +14,30 @@ from flask import Flask, render_template
 from flask_babel import Babel
 
 
+class Confit:
+    """ class Confit
+    """
+    # Configure supported languages
+    LANGUAGES = ['en', 'fr']
+
+    # Set default language
+    BABEL_DEFAULT_LOCALE = 'en'
+
+    # Set default timezone
+    BABEL_DEFAULT_TIMEZONE = 'UTC'
+
+
 app = Flask(__name__)
 babel = Babel(app)
 
-# Configure supported languages
-app.config['LANGUAGES'] = ['en', 'fr']
-
-# Set default language
-app.config['BABEL_DEFAULT_LOCALE'] = 'en'
-
-# Set default timezone
-app.config['BABEL_DEFAULT_TIMEZONE'] = 'UTC'
+app.config.from_object(Config)
 
 
 @app.route('/')
 def index() -> str:
-    return render_template('1-index.html')
+    """ flask app
+    """
+    return render_template('1-index.html',)
 
 
 if __name__ == '__main__':
